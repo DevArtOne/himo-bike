@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <link href="https://fonts.googleapis.com/css?family=Inter:regular,700,900" rel="stylesheet" />
+    <link rel="stylesheet" href="scss/style.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <title>HIMO</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <!-- SVG icon -->
+    <svg style="display: none;">
+        <symbol id="instagram" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
+
+            <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="#ffffff" stroke="none">
+                <path d="M1218 5109 c-167 -20 -364 -85 -514 -170 -388 -223 -644 -611 -693
+-1052 -15 -133 -15 -2521 0 -2654 71 -643 579 -1151 1222 -1222 133 -15 2521
+-15 2654 0 643 71 1151 579 1222 1222 15 133 15 2521 0 2654 -71 643 -579
+1151 -1222 1222 -118 13 -2554 13 -2669 0z m2773 -321 c208 -57 368 -148 508
+-289 141 -140 232 -300 290 -508 l26 -96 0 -1335 0 -1335 -26 -96 c-58 -208
+-149 -368 -290 -508 -140 -141 -300 -232 -508 -290 l-96 -26 -1335 0 -1335 0
+-96 26 c-208 58 -368 149 -508 290 -141 140 -232 300 -290 508 l-26 96 0 1335
+0 1335 26 96 c58 208 149 368 289 508 166 166 385 276 615 310 33 5 645 8
+1360 7 l1300 -1 96 -27z" />
+                <path d="M3945 4453 c-244 -34 -410 -271 -351 -501 41 -163 145 -266 307 -308
+275 -70 545 179 499 460 -25 157 -140 289 -290 334 -44 13 -125 20 -165 15z
+m112 -319 c54 -34 63 -117 18 -164 -37 -38 -82 -47 -128 -25 -70 33 -85 125
+-29 177 41 39 89 43 139 12z" />
+                <path d="M2367 3945 c-553 -76 -1020 -492 -1161 -1037 -124 -477 15 -981 368
+-1334 550 -550 1422 -550 1972 0 550 550 550 1422 0 1972 -316 315 -739 459
+-1179 399z m353 -300 c240 -36 444 -139 615 -310 431 -430 431 -1120 0 -1550
+-430 -431 -1120 -431 -1550 0 -431 430 -431 1120 0 1550 249 249 591 363 935
+310z" />
+            </g>
+        </symbol>
+
+        <symbol id="facebook" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
+
+            <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="#ffffff" stroke="none">
+                <path d="M490 5104 c-232 -49 -426 -246 -475 -479 -22 -105 -22 -4025 0 -4130
+38 -180 163 -344 326 -424 149 -73 101 -71 1263 -71 l1038 0 39 22 c25 14 46
+37 59 63 20 41 20 57 18 998 -3 954 -3 956 -24 984 -12 15 -36 37 -55 48 -31
+19 -55 20 -321 23 l-288 3 0 215 0 214 294 0 c424 0 396 -33 396 465 0 395 6
+441 67 565 50 103 160 213 263 263 120 59 176 67 503 67 l287 0 0 -215 0 -215
+-275 0 c-300 0 -317 -3 -367 -56 -15 -16 -32 -42 -37 -57 -7 -18 -11 -151 -11
+-365 0 -376 1 -384 69 -429 33 -23 39 -23 327 -23 l294 0 0 -214 0 -215 -287
+-3 c-267 -3 -291 -4 -322 -23 -19 -11 -43 -33 -55 -48 -21 -28 -21 -30 -24
+-989 l-2 -960 21 -38 c12 -21 38 -47 59 -59 37 -21 45 -21 661 -21 702 0 705
+1 848 71 163 80 288 244 326 424 22 105 22 4025 0 4130 -49 236 -244 431 -480
+480 -102 21 -4035 21 -4135 -1z m4060 -294 c139 -26 234 -121 260 -259 14 -74
+14 -3908 0 -3982 -26 -138 -121 -233 -260 -259 -31 -6 -262 -10 -556 -10
+l-504 0 0 764 0 765 293 3 c335 3 343 5 385 88 23 45 23 46 20 447 l-3 401
+-31 39 c-17 21 -46 43 -65 50 -23 8 -125 12 -316 12 l-283 1 0 165 0 165 291
+0 c326 0 340 2 381 69 23 36 23 37 23 448 0 402 0 412 -21 440 -11 15 -36 38
+-55 51 l-34 23 -435 -3 -435 -4 -88 -27 c-321 -100 -536 -318 -630 -642 -18
+-62 -21 -105 -25 -377 l-4 -308 -284 0 c-319 0 -332 -2 -380 -66 l-29 -37 -3
+-401 c-4 -567 -32 -529 406 -534 l292 -3 0 -765 0 -764 -919 0 c-581 0 -938 4
+-972 10 -138 26 -233 121 -259 260 -14 73 -14 3908 0 3981 26 134 122 233 252
+258 63 13 3923 13 3988 1z" />
+            </g>
+        </symbol>
+
+        <symbol id="phone" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
+
+            <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="#ffffff" stroke="none">
+                <path d="M2327 5109 c-325 -31 -613 -114 -906 -260 -260 -129 -450 -266 -665
+-477 -205 -203 -353 -408 -485 -673 -313 -628 -355 -1340 -120 -2004 88 -246
+263 -556 423 -750 241 -290 518 -510 847 -674 390 -194 805 -285 1229 -268
+381 16 712 100 1049 268 406 201 743 499 996 879 87 131 217 387 270 534 175
+478 200 1028 70 1523 -49 186 -92 300 -185 488 -130 263 -267 454 -478 669
+-531 538 -1297 817 -2045 745z m-650 -1219 c32 -12 517 -491 539 -532 34 -65
+27 -77 -155 -262 -92 -94 -176 -186 -185 -203 -38 -75 -30 -164 21 -241 167
+-248 607 -673 810 -782 46 -25 137 -27 191 -5 23 10 101 79 202 180 167 166
+193 184 248 170 34 -8 525 -494 548 -543 30 -64 -4 -118 -163 -257 -170 -149
+-359 -212 -553 -185 -261 36 -690 248 -1000 496 -116 93 -400 378 -492 494
+-208 261 -388 594 -454 835 -42 155 -24 317 53 475 42 85 59 108 176 227 71
+73 139 134 151 136 11 2 24 5 28 6 4 0 19 -4 35 -9z" />
+            </g>
+        </symbol>
+
+        <symbol id="mail" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
+
+            <g transform="translate(-50.00000,552.000000) scale(0.120000,-0.120000)" fill="#ffffff" stroke="none">
+                <path d="M2285 4664 c-630 -85 -1163 -423 -1515 -959 -74 -113 -172 -320 -219
+-460 -179 -538 -142 -1118 103 -1620 181 -369 472 -685 822 -891 617 -363
+1380 -393 2019 -79 732 359 1185 1088 1185 1905 0 572 -218 1099 -619 1501
+-337 337 -753 541 -1234 604 -143 18 -403 18 -542 -1z m1320 -1270 c39 -21 82
+-61 74 -68 -35 -32 -959 -679 -998 -698 -68 -35 -162 -38 -229 -8 -30 13 -972
+671 -1011 706 -7 7 33 46 64 62 16 8 44 19 60 23 17 4 473 6 1015 6 l985 -2
+40 -21z m-1715 -559 c519 -368 532 -375 670 -375 139 0 152 8 664 371 257 181
+473 332 481 335 13 5 15 -73 15 -632 0 -397 -4 -653 -10 -675 -16 -56 -51
+-101 -100 -129 l-45 -25 -1005 0 -1005 0 -45 25 c-49 28 -84 73 -100 129 -12
+45 -14 1311 -1 1311 4 0 221 -151 481 -335z" />
+            </g>
+        </symbol>
+    </svg>
+    <!-- SVG icon -->
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__block">
+                <a href="#"><img class="header__logo" src="img/logo.jpg"></a>
+                <nav class="header__items items" id="nav">
+                    <a href="#" class="items__item" data-scroll="#description">ОПИСАНИЕ</a>
+                    <a href="#" class="items__item" data-scroll="#characteristics">ХАРАКТЕРИСТИКИ</a>
+                    <a href="#" class="items__item" data-scroll="#order">СТОИМОСТЬ</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- HEADER -->
+
+    <!-- MAIN -->
+    <main class="main">
+        <div class="container">
+
+            <!-- Block -->
+            <div class="main__block">
+                <div class="main__article article">
+                    <div class="article__himo himo">
+                        <h1 class="himo__title">
+                            Xiaomi Himo C26
+                        </h1>
+                        <div class="himo__subtitle">
+                            Электрический велосипед
+                        </div>
+                        <p class="himo__text-one">Полная свобода передвижения и надежный транспорт для путешествий на
+                            любые расстояния</p>
+                        <p class="himo__text-two">HIMO C26 – это новый электровелосипед от Xiaomi, который создан как
+                            для езды по городу, так и бездорожью. Он имеет мощный двигатель и емкий аккумулятор,
+                            благодаря которым способен проезжать на одном заряде до 100 км, что определенно выше, чем у
+                            большинства конкурентов. А большие колеса с пневматическими шинами, дисковые тормоза,
+                            7-скоростная трансмиссия и эргономичное сидение делают каждую поездку гораздо приятнее. </p>
+                    </div>
+                    <div class="article__slider slider" id="photoSlider">
+                        <div class="slick-block">
+                            <div class="slider__block">
+                                <img class="slider__photo" src="img/slider/slide 1.jpg">
+                                </img>
+                            </div>
+                        </div>
+                        <div class="slick-block">
+                            <div class="slider__block">
+                                <img class="slider__photo" src="img/slider/slide 2.jpg">
+                                </img>
+                            </div>
+                        </div>
+                        <div class="slick-block">
+                            <div class="slider__block">
+                                <img class="slider__photo" src="img/slider/slide 3.jpg">
+                                </img>
+                            </div>
+                        </div>
+                        <div class="slick-block">
+                            <div class="slider__block">
+                                <img class="slider__photo" src="img/slider/slide 4.jpg">
+                                </img>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main__xiaomi xiaomi">
+                    <a href="#" class="xiaomi__button two" data-scroll="#order">ЗАКАЗАТЬ</a>
+                    <div class="xiaomi__list list one">
+                        <div class="list__item">
+                            <div class="list__title">до 100 км</div>
+                            <div class="list__subtitle">Запас хода</div>
+                        </div>
+                        <div class="list__item">
+                            <div class="list__title">25 км/ч</div>
+                            <div class="list__subtitle">Макс корость</div>
+                        </div>
+                        <div class="list__item">
+                            <div class="list__title">3 режима езды</div>
+                            <div class="list__subtitle">механический, гибридный, электрический</div>
+                        </div>
+                        <div class="list__item">
+                            <div class="list__title">25 кг</div>
+                            <div class="list__subtitle">вес</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Block -->
+
+            <!-- description -->
+            <div class="main__description description" id="description">
+                <img class="description__img order-two" src="img/girl.jpg" alt="">
+                <div class="description__description-items description-items">
+                    <div class="description-items__description-item description-item">
+                        <h4 class="description-item__title">
+                            Комфорт и безопасность от HIMO
+                        </h4>
+                        <p class="description-item__subtitle">
+                            Электровелосипед HIMO C26 позволит вам быстро и с комфортом добраться до места работы или
+                            учебы и не привязываться к городскому транспорту. Велосипед обладает прочной конструкцией и
+                            внушительным запасом хода, чтобы стать надежным транспортным средством в современных
+                            городских условиях. Легкая и прочная рама, 26-дюймовые колеса и 7-ступенчатая система
+                            трансмиссии позволяют уверенно передвигаться не только по асфальтированному дорожному
+                            полотну, но и по сложной загородной трассе.
+                        </p>
+                    </div>
+                    <div class="description-items__description-item description-item">
+                        <h4 class="description-item__title">
+                            Прочная и легкая рама
+                        </h4>
+                        <p class="description-item__subtitle">
+                            Рама HIMO C26 изготовлена из прочного и легкого алюминиевого сплава и отличается высокой
+                            надежностью, устойчивостью в аварийных ситуациях, превосходной управляемостью и комфортным
+                            передвижением по любой дороге.
+                        </p>
+                    </div>
+                    <div class="description-items__description-item description-item">
+                        <h4 class="description-item__title">
+                            Комбинация режимов для увеличения запаса хода
+                        </h4>
+                        <p class="description-item__subtitle">
+                            Электровелосипед HIMO C26 обладает увеличенным запасом хода. Его аккумулятор емкостью 10000
+                            мАч с интеллектуальной системой оптимизации энергопотребления позволяет проехать до 60 км на
+                            одном заряде в режиме электропривода. При использовании на некоторых участках пути
+                            физической силы дальность хода увеличивается до 100 км. Максимальная скорость передвижения
+                            HIMO C26 составляет 25 км/ч.
+                        </p>
+                    </div>
+                    <div class="description-items__description-item description-item">
+                        <h4 class="description-item__title">
+                            Надежная трансмиссия
+                        </h4>
+                        <p class="description-item__subtitle">
+                            7-ступенчатая система трансмиссии обеспечивает плавное и точное переключение передач,
+                            удобное управление скоростью и надежность в работе. Переключая передачи, вы сможете с
+                            минимальными усилиями заехать на горку и безопасно скатиться вниз.
+                        </p>
+                    </div>
+                    <div class="description-items__description-item description-item">
+                        <h4 class="description-item__title">
+                            Вся информация на ЖК-дисплее
+                        </h4>
+                        <p class="description-item__subtitle">
+                            Вся информация на ЖК-дисплее
+                            Большой информативный дисплей, вынесенный на рулевую стойку, отображает всю важную
+                            информацию о работе HIMO C26 в реальном времени. Вы сможете узнать актуальную скорость
+                            передвижения, уровень заряда или пройденный путь. Дисплей защищен от воздействия внешних
+                            факторов по стандарту IPX7 и не боится дождя и пыли.
+                        </p>
+                    </div>
+                    <div class="description-items__description-item description-item">
+                        <h4 class="description-item__title">
+                            Удобное седло
+                        </h4>
+                        <p class="description-item__subtitle">
+                            Электровелосипед HIMO C26 укомплектован велосипедным седлом от известного бренда Selle
+                            Royal. Трехмерная гелевая структура седла обеспечивает оптимальную упругость и высокий
+                            комфорт во время езды.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- description -->
+
+            <!-- characteristics -->
+            <div class="main__characteristics characteristics" id="characteristics">
+                <h4 class="characteristics__paragraph">характеристики</h4>
+                <div class="characteristics__block">
+                    <div class="characteristics__characteristic characteristic">
+
+                        <div class="characteristic__block">
+                            <h4 class="characteristic__title">
+                                Общие
+                            </h4>
+                            <div class="characteristic__block-characteristics block-characteristics">
+                                <div class="block-characteristics__one">
+                                    <p class="one-paragraph">Производитель</p>
+                                    <p class="one-characteristic">Xiaomi</p>
+                                </div>
+                                <div class="block-characteristics__one">
+                                    <p class="one-paragraph">Вид</p>
+                                    <p class="one-characteristic">взрослый, дорожный, городской, электровелосипед,
+                                        алюминиевая рама</p>
+                                </div>
+                                <div class="block-characteristics__one">
+                                    <p class="one-paragraph">Колеса</p>
+                                    <p class="one-characteristic">26, двойной алюминиевый обод</p>
+                                </div>
+                                <div class="block-characteristics__one">
+                                    <p class="one-paragraph">Электропривод</p>
+                                    <p class="one-characteristic">мотор 250W, разгон до 25 км/ч</p>
+                                </div>
+                                <div class="block-characteristics__one">
+                                    <p class="one-paragraph">Производитель</p>
+                                    <p class="one-characteristic">Xiaomi</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="characteristic__block">
+                            <h4 class="characteristic__title">
+                                амортизация
+                            </h4>
+                            <div class="characteristic__block-characteristics block-characteristics">
+                                <div class="block-characteristics__one">
+                                    <p class="one-paragraph">Тип амортизации</p>
+                                    <p class="one-characteristic">амортизирующая вилка (Hard tail)</p>
+                                </div>
+                                <div class="block-characteristics__one">
+                                    <p class="one-paragraph">Вилка</p>
+                                    <p class="one-characteristic">пружинно-эластомерная</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="characteristic__block">
+                            <h4 class="characteristic__title">
+                                управление
+                            </h4>
+                            <div class="characteristic__block-characteristics block-characteristics">
+                                <div class="block-characteristics__one">
+                                    <p class="one-paragraph">Руль</p>
+                                    <p class="one-characteristic">изогнутый, регулируемый подъем</p>
+                                </div>
+                                <div class="block-characteristics__one">
+                                    <p class="one-paragraph">Манетки</p>
+                                    <p class="one-characteristic">триггерные однорычажные, Shimano</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="characteristic__block">
+                            <h4 class="characteristic__title">
+                                характеристика трансмиссии
+                            </h4>
+                            <div class="characteristic__block-characteristics block-characteristics">
+                                <div class="block-characteristics__one">
+                                    <p class="one-paragraph">Количество скоростей</p>
+                                    <p class="one-characteristic">7</p>
+                                </div>
+                                <div class="block-characteristics__one">
+                                    <p class="one-paragraph">Педали</p>
+                                    <p class="one-characteristic">классические</p>
+                                </div>
+                                <div class="block-characteristics__one">
+                                    <p class="one-paragraph">Передний переключатель</p>
+                                    <p class="one-characteristic">1 звезда</p>
+                                </div>
+                                <div class="block-characteristics__one">
+                                    <p class="one-paragraph">Задний переключатель</p>
+                                    <p class="one-characteristic">Shimano Tourney (прогулочный)</p>
+                                </div>
+                                <div class="block-characteristics__one">
+                                    <p class="one-paragraph">Кассета</p>
+                                    <p class="one-characteristic">7 звезд</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="characteristic__block">
+                            <h4 class="characteristic__title">
+                                тормоза
+                            </h4>
+                            <div class="characteristic__block-characteristics block-characteristics">
+                                <div class="block-characteristics__one">
+                                    <p class="one-paragraph">Передний</p>
+                                    <p class="one-characteristic">дисковый механический</p>
+                                </div>
+                                <div class="block-characteristics__one">
+                                    <p class="one-paragraph">Задний</p>
+                                    <p class="one-characteristic">дисковый механический</p>
+                                </div>
+                                <div class="block-characteristics__one">
+                                    <p class="one-paragraph">Готовность к установке дисковых</p>
+                                    <p class="one-characteristic">рама, вилка, втулка </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="characteristic__block">
+                            <h4 class="characteristic__title">
+                                прочее
+                            </h4>
+                            <div class="characteristic__block-characteristics block-characteristics">
+                                <div class="block-characteristics__one">
+                                    <p class="one-paragraph">Оснащение</p>
+                                    <p class="one-characteristic">электрооборудование, звонок</p>
+                                </div>
+                                <div class="block-characteristics__one">
+                                    <p class="one-paragraph">Вес</p>
+                                    <p class="one-characteristic">25 кг</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img class="characteristics__img" src="img/speed.jpg" alt="">
+                </div>
+            </div>
+            <!-- characteristics -->
+
+            <!-- slider -->
+            <div class="main__bike bike" id="bikeSlider">
+                <div class="slick-block">
+                    <div class="bike__block">
+                        <img class="bike__photo" src="img/slider/slide-1-1.jpg">
+                        </img>
+                    </div>
+                </div>
+                <div class="slick-block">
+                    <div class="bike__block">
+                        <img class="bike__photo" src="img/slider/slide-1-2.jpg">
+                        </img>
+                    </div>
+                </div>
+                <div class="slick-block">
+                    <div class="bike__block">
+                        <img class="bike__photo" src="img/slider/slide-1-3.jpg">
+                        </img>
+                    </div>
+                </div>
+            </div>
+            <!-- slider -->
+
+            <!-- order -->
+            <div class="main__order order">
+
+                <div class="order__order-block order-block">
+                    <h4 class="order-block__title">Заказать</h4>
+                    <p class="order-block__text">Если Вы хотите заказать велосипед, оставьте свой контакт и наш
+                        менеджер перезвонит вам в ближайшее время</p>
+                    <form class="order-block__form form" action="#">
+                        <input class="form__name" type="text" name="name" id="#" placeholder="имя">
+                        <input class="form__tel" type="tel" name="number" id="#" placeholder="телефон">
+                        <div class="form__color-form color-form">
+                            <div class="color-form__color">выберите желаемый цвет</div>
+                            <div class="color-form__buttons buttons">
+                                <button class="buttons__button-gray" type="button" id="gray"
+                                    onclick="changeGray()"></button>
+                                <button class="buttons__button-white" type="button" id="white"
+                                    onclick="changeWhite()"></button>
+                                <button class="buttons__button-red" type="button" id="red"
+                                    onclick="changeRed()"></button>
+                            </div>
+                        </div>
+                        <button class="form__button" id="order">ЗАКАЗАТЬ</button>
+                    </form>
+                </div>
+                <div class="order__photo-bike photo-bike">
+                    <div class="photo__bike-prise">32 999 грн.</div>
+
+                    <div class="photo-bike__block">
+                        <div class="photo-bike__photos-white" id="img-white">
+                            <img class="photo-bike__img" src="img/slider/bike-1.jpg" alt="bike">
+                        </div>
+
+                        <div class="photo-bike__photos-gray" id="img-gray">
+                            <img class="photo-bike__img" src="img/slider/bike-2.jpg" alt="bike">
+                        </div>
+
+                        <div class="photo-bike__photos-red" id="img-red">
+                            <img class="photo-bike__img" src="img/slider/bike-3.jpg" alt="bike">
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+        </div>
+        <!-- order -->
+        </div>
+    </main>
+    <!-- MAIN -->
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__block">
+                <div class="footer__title">Политика конфиденциальности
+                </div>
+                <div class="social">
+                    <a href="#" class="social__instagram" target="_blank">
+                        <svg class="social__instagram-svg">
+                            <use xlink:href="#instagram"></use>
+                        </svg>
+                    </a>
+                    <a href="#" class="social__facebook" target="_blank">
+                        <svg class="social__facebook-svg">
+                            <use xlink:href="#facebook"></use>
+                        </svg>
+                    </a>
+
+                </div>
+                <div class="contact">
+                    <div class="contact__phone">
+                        <a href="#" class="contact__phone-img" target="_blank">
+                            <svg class="contact__phone-svg">
+                                <use xlink:href="#phone"></use>
+                            </svg>
+                        </a>
+                        <div class="contact__number">+38 050 677 77 77</div>
+                    </div>
+                    <div class="contact__mail">
+                        <a href="#" class="contact__mail-img" target="_blank">
+                            <svg class="contact__mail-svg">
+                                <use xlink:href="#mail"></use>
+                            </svg>
+                        </a>
+                        <a class="contact__address" target="_blank"
+                            href="elektrobikeukr@gmail.com">elektrobikeukr@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
